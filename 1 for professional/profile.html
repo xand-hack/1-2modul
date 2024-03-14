@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Личный кабинет</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .lk{
+            width: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .desck{
+            width: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        a {
+            color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+    <h1>Личный кабинет</h1>
+    <div class="lk">
+        <p>Номер телефона</p>
+        <a type="number" name="number" >788005553535</a> <a href="#">Изменить</a><br>
+        <p>email</p>
+        <a type="text" name="email" >email</a> <a href="#">Изменить</a><br>
+        <p>Количество добавленных объявлений </p>
+        <a type="text" name="count" >15</a><br>
+        <p>Количество животных, которые вернулись к хозяевам</p>
+        <a type="text" name="count-desck" >2</a><br>
+        <p>дата регистрации пользователя</p>
+        <a type="date" name="date" >22-02-2022</a><br>
+        <p>количество дней, прошедших с момента регистрации на сайте</p>
+        <a type="date" name="date" >15</a>
+    </div>
+
+    <div class="desck">
+        <p>информация по объявлениям, созданным пользователем ранее</p>
+        <a type="date" name="date" href="#">Переход</a><br>
+    </div>
+</body>
+</html>

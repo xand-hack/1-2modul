@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет модератора</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+.controls label {
+    margin-right: 10px;
+}
+
+.controls select {
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.controls button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.advertisement {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.advertisement h2 {
+    margin-top: 0;
+}
+
+.advertisement p {
+    margin: 5px 0;
+}
+
+.advertisement .status {
+    font-weight: bold;
+}
+
+.status-active {
+    color: green;
+}
+
+.status-found {
+    color: blue;
+}
+
+.status-archive {
+    color: gray;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Личный кабинет модератора</h1>
+        <div class="controls">
+            <label for="sort">Сортировать по:</label>
+            <select id="sort">
+                <option value="date">Дата</option>
+                <option value="status">Статус</option>
+            </select>
+            <button id="sort-btn">Сортировать</button>
+        </div>
+        <div class="advertisements">
+            <!-- Сюда будут загружаться объявления -->
+        </div>
+    </div>
+</body>
+</html>

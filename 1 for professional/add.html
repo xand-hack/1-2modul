@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить информацию о найденном животном</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="file"] {
+    margin-bottom: 15px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+#register-fields {
+    display: none;
+}
+
+#register-checkbox:checked ~ #register-fields {
+    display: block;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Добавить информацию о найденном животном</h1>
+        <form action="#" method="POST">
+            <label for="contact-phone">Контактный номер телефона нашедшего питомца:</label>
+            <input type="tel" id="contact-phone" name="contact-phone" required>
+
+            <label for="contact-email">E-mail человека, нашедшего животное:</label>
+            <input type="email" id="contact-email" name="contact-email" required>
+
+            <input type="checkbox" id="register-checkbox">
+            <label for="register-checkbox">Хочу зарегистрироваться для добавления объявления</label>
+            <div id="register-fields">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password">
+                <label for="confirm-password">Подтвердите пароль:</label>
+                <input type="password" id="confirm-password" name="confirm-password">
+            </div>
+
+            <label for="animal-type">Выберите вид животного:</label>
+            <select id="animal-type" name="animal-type" required>
+                <option value="cat">Кошка</option>
+                <option value="dog">Собака</option>
+                <option value="other">Другое</option>
+            </select>
+
+            <label for="animal-photo">Фото найденного животного (не более 3 фотографий):</label>
+            <input type="file" id="animal-photo" name="animal-photo" accept="image/*" multiple required>
+
+            <label for="additional-info">Дополнительная информация:</label>
+            <textarea id="additional-info" name="additional-info"></textarea>
+
+            <label for="microchip">Клеймо (если есть):</label>
+            <input type="text" id="microchip" name="microchip">
+
+            <label for="district">Район:</label>
+            <input type="text" id="district" name="district" required>
+
+            <label for="found-date">Дата, когда было найдено животное:</label>
+            <input type="date" id="found-date" name="found-date" required>
+
+            <input type="checkbox" id="agree-checkbox" required>
+            <label for="agree-checkbox">Согласен на обработку персональных данных</label>
+
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>

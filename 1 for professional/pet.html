@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточка найденного животного</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.animal-card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.animal-photos {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.animal-photos img {
+    width: calc(33.33% - 5px);
+    border-radius: 4px;
+}
+
+.animal-details h2 {
+    margin-top: 0;
+}
+
+.animal-details p {
+    margin: 5px 0;
+}
+
+.animal-details p strong {
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Карточка найденного животного</h1>
+        <div class="animal-card">
+            <div class="animal-photos">
+                <img src="" alt="Фото животного">
+                <img src="" alt="Фото животного">
+                <img src="" alt="Фото животного">
+            </div>
+            <div class="animal-details">
+                <h2>Кошка</h2>
+                <p><strong>Имя нашедшего:</strong> Имя </p>
+                <p><strong>Контактный номер телефона:</strong> +7 (800) 555-35-35</p>
+                <p><strong>E-mail:</strong> e@e.com</p>
+                <p><strong>Дополнительная информация:</strong> Найдено</p>
+                <p><strong>Клеймо:</strong> Нет</p>
+                <p><strong>Район:</strong> Центральный</p>
+                <p><strong>Дата находки:</strong> 2024-02-27</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

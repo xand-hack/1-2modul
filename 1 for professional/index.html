@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Праздник в каждый дом</title>
+    <style>
+
+/* Основные стили для всего документа */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: 'Roboto Medium', Arial, sans-serif;
+}
+
+/* Стили для абзацев */
+p {
+    font-family: 'Roboto Medium', Arial, sans-serif;
+}
+
+/* Стили для верхнего блока страницы (header) */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+header:hover {
+    transform: translateY(5px);
+}
+
+/* Навигационное меню */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Стили для списка в контейнере */
+.container {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стили для элементов списка в контейнере */
+.container li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+/* Стили для ссылок внутри списка */
+.container li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container li a:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Стили для кнопок в блоке "promotion" */
+.promotion button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px 12px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.promotion button:hover {
+    background-color: #45a049;
+}
+
+/* Основные стили для различных блоков на странице */
+.company-info,
+.company-description,
+.reviews,
+.search,
+.actions,
+.subscribe {
+    max-width: 1080px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для заголовков разных уровней */
+h1, h2, h3, h4, h5, h6 {
+    color: #4e4e4e;
+    font-family: 'Roboto Medium', Arial, sans-serif;
+}
+
+/* Стили для блока с акциями */
+.promotions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Стили для контейнера с изображениями */
+.container-img {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+/* Стили для блоков с изображениями и текстом */
+.imgontxt1,
+.imgontxt2,
+.imgontxt3 {
+    margin-bottom: 20px;
+}
+
+/* Стили для верхнего блока с изображениями и текстом */
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+/* Стили для footer с разделением на две части */
+.podval {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* для логотипа в подвале */
+.logo {
+    width: 50%;
+    margin: 10px;
+    margin-left: 20px;
+}
+
+/* для изображения в логотипе в подвале */
+.logo img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    background-color: white;
+    border-radius: 8px;
+}
+
+/* Стили для контактной информации в подвале */
+.contact {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Стили для заголовка контактной информации в подвале */
+.contact h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Стили для ссылок в контактной информации в подвале */
+.contact a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Стили для контейнера с дополнительными ссылками */
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Стили для заголовков дополнительных ссылок в подвале */
+.contact-links h6 {
+    margin: 0 10px 5px 0;
+    font-size: 14px;
+}
+
+/* Стили для ссылок в футере */
+.footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Стили для ссылок в футере при наведении */
+.footer a:hover {
+    color: #4CAF50;
+}
+
+/* Добавленные стили для анимации шагов */
+.step-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Стили для отдельного шага в анимации */
+.step {
+    width: 50px;
+    height: 50px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.5s, transform 1.5s;
+}
+
+/* Показывает шаг при добавлении класса "show" */
+.step.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Стили для линии между шагами */
+.step-line {
+    flex: 1;
+    height: 2px;
+    background-color: #4CAF50;
+    opacity: 0;
+    transition: opacity 2.4s;
+}
+
+/* Показывает линию при добавлении класса "show" */
+.step-line.show {
+    opacity: 1;
+}
+
+/* Стили для блока отзывов */
+.reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Стили для отдельного отзыва */
+.review {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/* Увеличивает размер отзыва при наведении */
+.review:hover {
+    transform: scale(1.20);
+}
+
+/* Стили для информации о отзыве */
+.review-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Стили для содержимого отзыва */
+.review-content {
+    flex: 2;
+    margin-left: 20px;
+}
+
+/* Стили для изображения в отзыве */
+.review img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/* Стили для звездочек рейтинга */
+.stars {
+    color: #FFD700;
+}
+
+/* Стили для блока с дополнительными действиями */
+.actions {
+    text-align: center;
+}
+
+/* Стили для блока с акциями */
+.promotions {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+/* Стили для верхнего блока */
+.top {
+    position: relative;
+}
+
+/* Стили для текста над изображениями */
+.imgontxt {
+    margin-bottom: 20px;
+    text-align: center;
+    display: none;
+}
+
+/* Стили для изображений */
+.img_1,
+.img_2,
+.img_3 {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Стили для стрелок навигации между изображениями */
+.arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Стили для кнопок стрелок */
+.arrows button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+/* Стили для кнопок стрелок при наведении */
+.arrows button:hover {
+    background-color: #45a049;
+}
+
+/* Стили для блока поиска */
+.search {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+.fast-search{
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Стили для контейнера с поиском */
+.con-search h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+/* Стили для формы поиска */
+#searchForm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Стили для элементов формы поиска */
+#searchForm label {
+    margin: 0 10px;
+    font-size: 16px;
+    color: #333;
+    margin: auto;
+}
+
+/* Стили для полей ввода и кнопки формы поиска */
+#searchForm select,
+#searchForm input[type="date"],
+#searchForm input[type="number"] {
+    padding: 10px;
+    margin: 5px;
+    box-sizing: border-box;
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Стили для кнопки формы поиска */
+#searchForm button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 15px;
+    margin: auto;
+    transition: background-color 0.3s;
+}
+
+/* Стили для кнопки формы поиска при наведении */
+#searchForm button:hover {
+    background-color: #45a049;
+}
+
+/* Стили для сообщения об ошибке */
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Добавленные стили для нового контейнера additional-links */
+.additional-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* Стили для заголовков дополнительных ссылок в новом контейнере */
+.additional-links h6 {
+    margin: 0;
+}
+
+/* Стили для ссылок в новом контейнере */
+.additional-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+.subscribe {
+    max-width: 1080px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* Стили для формы подписки */
+.subscription-form {
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Стили для ссылок в новом контейнере при наведении */
+.additional-links a:hover {
+    color: #45a049;
+}
+</style>
+</head>
+
+<body>
+    <header>
+       <!-- Шапка сайта -->
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/for logo/logo.svg" alt="logo">
+            </div>
+            <ul class="container">
+                <li class="frst"><a href="#con-search">Поиск</a></li>
+                <li class="scnd"><a href="register.html">Регистрация</a></li>
+                <li><a href="profile.html">Личный кабинет</a></li>
+                <li><a href="pet.html">Найдено животное</a></li>
+                <li><a href="#con-search">Поиск</a></li>
+            </ul>
+        </nav>
+    </header>
+<!--  <section class="company-info">
+    
+    <h1>Чтобы воспользоваться услугами компании необходимо:</h1>
+    <div class="step-container">
+       
+        <div class="step">1</div>
+        <div class="step-line"></div>
+        <div class="step">2</div>
+        <div class="step-line"></div>
+        <div class="step">3</div>
+        <div class="step-line"></div>
+        <div class="step">4</div>
+        <div class="step-line"></div>
+        <div class="step">5</div>
+        <div class="step-line"></div>
+        <div class="step">6</div>
+    </div>
+    
+    <p>1. Выбрать класс автомобиля</p>
+    <p>2. Выбрать марку</p>
+    <p>3. Выбрать модель</p>
+    <p>4. Выберите дату</p>
+    <p>5. Введите личные данные</p>
+    <p>6. Оформить заказ.</p>
+</section>
+-->
+
+<section class="actions">
+
+    <div class="promotions" id="promotions">
+        <div class="container-img">
+            <div class="top">
+                <div class="imgontxt promotion" data-index="1">
+                    <h2>название</h2>
+                    <img class="img_1" src="images/promotions/promotion1.jpg" alt="1">
+                    <button onclick="">Показать больше</button>
+                    <p id="info1" style="">подробно</p>
+                </div>
+                <div class="imgontxt promotion" data-index="2" style="display: none;">
+                    <h2>название</h2>
+                    <img class="img_2" src="images/promotions/promotion2.jpg" alt="2" style="height:520px;">
+                    <button onclick="">Показать больше</button>
+                    <p id="info2" style="">подробно</p>
+                </div>
+                <div class="imgontxt promotion" data-index="3" style="display: none;">
+                    <h2>название</h2>
+                    <img class="img_3" src="images/promotions/promotion3.jpg" alt="3">
+                    <button onclick="">Показать больше</button>
+                    <p id="info3" style="">подробно</p>
+                </div>
+
+                <div class="arrows">
+                    <button onclick="prevPromotion()">&#10094;</button>
+                    <button onclick="nextPromotion()">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="fast-search">
+    <label class="fast-search">Быстрый поиск:</label>
+    <input class="fast-search" id="model" name="model">
+</section>
+
+
+
+<section class="reviews">
+    <h1>Факты о компании и сайте</h1>
+    <div class="review">
+        <div class="review-content">
+            <h2>Помогли найти более 500 животных</h2>
+        </div>
+    </div>
+
+        <div class="review">
+            <div class="review-content">
+                <h2>Более трех лет способствуем возвращению питомцев к хозяевам</h2>
+            </div>
+        </div>
+        
+        <div class="review">
+            <div class="review-content">
+                <h2>Все услуги оказываются бесплатно</h2>
+            </div>
+        </div>
+</section>
+
+
+<section class="actions">
+    <div class="promotions" id="promotions">
+        <div class="container-img">
+            <div class="top">
+                <div class="imgontxt promotion" data-index="1">
+                    <h2>название</h2>
+                    <img class="img_1" src="images" alt="1">
+                    
+                    <p id="" style="">подробно</p>
+                </div>
+                <div class="imgontxt promotion" data-index="2" style="display: none;">
+                    <h2>название</h2>
+                    <img class="img_2" src="images" alt="2" style="height:520px;">
+                    
+                    <p id="info2" style="">подробно</p>
+                </div>
+                <div class="imgontxt promotion" data-index="3" style="display: none;">
+                    <h2>название</h2>
+                    <img class="img_3" src="images" alt="3">
+                    
+                    <p id="info3" style="">подробно</p>
+                </div>
+
+                <div class="arrows">
+                    <button onclick="prevPromotion()">&#10094;</button>
+                    <button onclick="nextPromotion()">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  
+ <section class="search">
+        <!-- Форма поиска -->
+        <div class="con-search" id="con-search">
+            <h2>Поиск</h2>
+            <form id="searchForm">
+                <label for="classA">Район:</label>
+                <input id="classA" name="classA">
+              
+                <label for="marka">Вид:</label>
+                <input id="marka" name="marka">
+               
+                <label for="model">Поиск по виду:</label>
+                <input id="model" name="model">
+        
+                <button type="button" style="" onclick="search()">Поиск питомца</button>
+                <div id="errorMessage" class="error-message"></div>
+            </form>
+        </div>
+    </section>
+
+    
+<section class="actions">
+
+    <div class="promotions" id="promotions">
+        <div class="container-img">
+            <div class="top">
+                <div class="imgontxt promotion" data-index="1">
+                    <h2>название</h2>
+                    <img class="img_1" src="images/promotions/promotion1.jpg" alt="1">
+                    <button onclick="">Показать больше</button>
+                    <p id="info1" style="">подробно</p>
+                </div>
+                <div class="imgontxt promotion" data-index="2" style="display: none;">
+                    <h2>название</h2>
+                    <img class="img_2" src="images/promotions/promotion2.jpg" alt="2" style="height:520px;">
+                    <button onclick="">Показать больше</button>
+                    <p id="info2" style="">подробно</p>
+                </div>
+                <div class="imgontxt promotion" data-index="3" style="display: none;">
+                    <h2>название</h2>
+                    <img class="img_3" src="images/promotions/promotion3.jpg" alt="3">
+                    <button onclick="">Показать больше</button>
+                    <p id="info3" style="">подробно</p>
+                </div>
+
+                <div class="arrows">
+                    <button onclick="prevPromotion()">&#10094;</button>
+                    <button onclick="nextPromotion()">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="subscribe">
+    <!-- Форма для подписки на акции -->
+    <h2 style="text-align: center;">Подписка на закрытые акции</h2>
+  <form class="subscription-form" id="subscriptionForm" onsubmit="event.preventDefault(); navigateToThankYouPage();">
+    <label for="email">Введите ваш email:</label><br>
+    <input type="email" id="email" name="email" placeholder="email" required><br><br>
+    <button type="submit">Подписаться</button>
+  </form>
+    
+  </section>
+
+
+<footer class="footer">
+    <!-- Подвал сайта -->
+    <div class="podval">
+        <div class="logo">
+            <img src="images/for logo/logo.svg" alt="logo2">
+        </div>
+        <!-- Логотип и контактная информация -->
+        <div class="contact">
+            <h3>Телефон <br> <a href="tel:+78001111111">8 (800) 111-11-11</a></h3>
+            <div class="contact-links">
+				<h6><a href="#">Главная</a></h6>
+                    <h6><a href="register.html">Регистрация</a></h6>
+                        <h6><a href="login.html">Авторизация<a></h6>
+                            <h6><a href="#">Личный кабинет</a></h6>
+                                <h6> <a href="#">Найдено животное</a></h6>
+                                    <h6> <a href="#con-search">Поиск</a></h6>
+            </div>
+        </div>
+    </div>
+</footer>
+
+ <script>
+      document.addEventListener('DOMContentLoaded', function () {
+    var reviewsSection = document.querySelector('.reviews');
+
+    function showReviews() {
+      if (isInViewport(reviewsSection)) {
+        reviewsSection.classList.add('show');
+        // Удаляем обработчик событий после того, как отзывы появились
+        window.removeEventListener('scroll', showReviews);
+      }
+    }
+
+    // Функция, проверяющая, виден ли элемент в текущей видимой области окна
+    function isInViewport(element) {
+      var rect = element.getBoundingClientRect();
+      return (
+        rect.bottom >= 0 &&
+        rect.right >= 0 &&
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    window.addEventListener('scroll', showReviews);
+    // Вызываем функцию showReviews после загрузки страницы, если отзывы уже видны
+    showReviews();
+  });
+function search() {
+        var classAInput = document.getElementById('classA').value;
+        var markaInput = document.getElementById('marka').value;
+        var modelInput = document.getElementById('model').value;
+
+        if (!classAInput || !markaInput.value || !modelInput) {
+            document.getElementById('errorMessage').innerText = 'Заполните все поля.';
+        } 
+           
+            document.getElementById('errorMessage').innerText = '';
+
+            // Сохранение данных в localStorage 
+            localStorage.setItem('classA', classAInput);
+            localStorage.setItem('marka', markaInput);
+            localStorage.setItem('model', modelInput);
+
+            // Переход на страницу поиска
+            window.location.href = 'search.html';
+        }
+    
+    // Функция для переключения видимости информации об акциях
+    function toggleInfo(infoId, imgId) {
+        var infoElement = document.getElementById(infoId);
+        var imgElement = document.getElementsByClassName(imgId)[0];
+
+        if (infoElement.style.display === 'none' || infoElement.style.display === '') {
+            infoElement.style.display = 'block';
+            imgElement.style.marginRight = '5px'; // оригинальный стиль
+        } else {
+            infoElement.style.display = 'none';
+            imgElement.style.marginRight = '0'; // отступ
+        }
+    }
+
+    var currentPromotion = 1; // Текущая акция
+
+    // Функция для отображения определенной акции
+    function showPromotion(index) {
+        // Скрываем все акции
+        document.querySelectorAll('.promotion').forEach(function (element) {
+            element.style.display = 'none';
+        });
+
+        // Отображаем акцию по текущему индексу
+        document.querySelector('.promotion[data-index="' + index + '"]').style.display = 'block';
+    }
+
+    // Функции для переключения между акциями
+    function nextPromotion() {
+        currentPromotion++;
+        if (currentPromotion > 3) {
+            currentPromotion = 1;
+        }
+        showPromotion(currentPromotion);
+    }
+
+    function prevPromotion() {
+        currentPromotion--;
+        if (currentPromotion < 1) {
+            currentPromotion = 3;
+        }
+        showPromotion(currentPromotion);
+    }
+
+    // Первоначальное отображение акции и установка интервала для автоматического переключения
+    showPromotion(currentPromotion);
+    setInterval(nextPromotion, 9000);
+
+    // Добавляем класс "show" к шагам, когда страница загружена и пользователь начинает прокручивать вниз
+document.addEventListener('DOMContentLoaded', function () {
+  var steps = document.querySelectorAll('.step, .step-line');
+
+  function showSteps() {
+    steps.forEach(function (step) {
+      if (isInViewport(step)) {
+        step.classList.add('show');
+        // Удаляем обработчик событий после того, как все шаги появляются
+        window.removeEventListener('scroll', showSteps);
+      }
+    });
+  }
+
+  // Функция, проверяющая, виден ли элемент в текущей видимой области окна
+  function isInViewport(element) {
+    var rect = element.getBoundingClientRect();
+    return (
+      rect.bottom >= 0 &&
+      rect.right >= 0 &&
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  // Добавляем обработчик событий для отслеживания прокрутки и вызова функции showSteps
+  window.addEventListener('scroll', showSteps);
+  // Вызываем функцию showSteps после загрузки страницы, если шаги уже видны
+  showSteps();
+});
+</script>
+</body>
+</html>

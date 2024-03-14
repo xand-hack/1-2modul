@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Регистрация</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        a {
+            color: #4caf50;
+        }
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Регистрация</h1>
+    <form method="post" action="#" class="form">
+        <p>email</p>
+        <input type="text" name="email" placeholder="email" required><br>
+        <p>Имя</p> 
+        <input type="password" name="name" id='name' placeholder="Имя" required><br>
+        <p>Фамилия</p>
+        <input type="text" name="last-name" placeholder="Фамилия" required><br>
+        <p>Телефон</p>
+        <input type="text" name="phone" placeholder="Телефон" required><br>
+        <p>Пароль</p>
+        <input type="text" name="pass" placeholder="Пароль" required><br>
+        <p>Повторите пароль</p>
+        <a class="error" id="error"></a>
+        <input type="text" name="pass1" placeholder="Пароль" required><br>
+        <input type="checkbox" required><p>СОГЛАШЕНИЕ НА ПЕРЕДАЧУ ИНФОРМАЦИИ</p><br>
+        <input type="submit" name="pass1" value="Регистрация">
+    </form>
+</body>
+</html>

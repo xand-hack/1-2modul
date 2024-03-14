@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты поиска животных</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.search-form input[type="text"] {
+    width: 70%;
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-form button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.results table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.results th, .results td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.results th {
+    background-color: #f2f2f2;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.pagination button:hover {
+    background-color: #45a049;
+}
+
+.pagination button.active {
+    background-color: #008CBA;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Результаты поиска животных</h1>
+        <!-- Форма поиска -->
+        <form action="#" method="GET" class="search-form">
+            <input type="text" name="search-query" placeholder="Поиск животных...">
+            <button type="submit">Искать</button>
+        </form>
+        
+        <!-- Таблица с результатами поиска -->
+        <div class="results">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Вид животного</th>
+                        <th>Фото</th>
+                        <th>Дополнительная информация</th>
+                        <th>Клеймо</th>
+                        <th>Район</th>
+                        <th>Дата находки</th>
+                        <th>Контактный номер</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Результаты поиска будут загружены здесь -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Пагинация -->
+        <div class="pagination">
+            <!-- Кнопки пагинации будут загружены здесь -->
+        </div>
+    </div>
+</body>
+</html>
